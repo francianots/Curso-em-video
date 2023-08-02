@@ -1,4 +1,4 @@
-Algoritmo "AL-11-Seq-fibonacci"
+Algoritmo "AL-11-Analisador-Valores"
 Var
    c, s, nu, di, pa, n : Inteiro
    m : Real
