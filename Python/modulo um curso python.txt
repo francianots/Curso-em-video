@@ -1,0 +1,165 @@
+modulo um curso python
+--------------------------------------------------------------------------
+aula 09
+
+--------------------------------------------------------------------------
+
+manipulando cadeias de caracteres
+
+Fatiamento de string (Pegar espaços da string)
+
+
+Quando atribuida uma string dentro de uma variavel ela é colocada em uma lista sequenciada em "micro espaços" sendo posivel contar e separa elas de acordo a necessidade
+ex
+          0  1  2  3  4  5   6  7  8   9 10 11 12 13  14 15 16 17 18 19 20
+ frase = [C][u][r][s][o] [] [e][m] [] [V][i][d][e][o] [] [P][y][t][h][o][n]
+
+print(frase[9])
+V
+
+print(frase[9:14])    ele ira mostrar sempre um a menos doq o indicado então para mostrar a palavra inteira q acabaria no 13 e necessario pedir ate o 14.
+Video
+
+print(frase[9:21:2])  a ultima casa mostra o salto que e desejado nesse exemplo ira saltar de 2 em 2 mostrando somente a casa correspondente 
+VdoPto
+
+
+print(frase[:5]) Quando e omitido o inicio ele ira iniciar do começo da frase ate o indice indicado como final
+Curso
+
+print(frase[15:] ja quando se omite o final ele ira mostrar apartir do indice indicado ate o final da string
+Python
+
+print(frase[9::3]) neste caso foi indicado o inicio, não foi indicado o final e foi indicado um salto de 3 em 3 casas'
+VePh
+
+
+len(frase)           para analisar a string use o lan
+21
+
+
+frase.count('o')    quantas vezes aparece a letra "o" na string
+3
+
+frase.count('o',0,13) quantas vezes aparece a letra "o" entra os incice 0 e 12
+1
+
+frase.find("deo") se existe o a sequencia de letras "deo" na string e quando ela comeca
+11
+
+frase.find('Android')   quando n encontrado a sequencia sempre retornarar -1
+-1
+
+'curso'infrase      existe a sequencia de caracteres "Curso" dentro da string (True,False)
+True 
+
+
+
+FUNCIONALIDADES DE TRANSFORMAÇÃO
+
+
+
+
+frase.replace('Python',Android')    Onde tiver "Python" substitua por por "Android"
+
+
+frase.upper()  deixe td em maiusculo
+CURSO EM VIDEO PYTHON
+
+
+frase.lower()  deixe td em minusculo
+curso em video python
+
+ 
+frase.capitalize()  deixe somente a primeira letra maiuscula
+Curso em video python
+
+
+frase.title() deixe toda palavra apos um espaço com a primeira letra maiuscula
+Curso Em Video Python
+
+
+frase.strip() remove os espaços inuteis que tenha antes(esquerda) e depois(direita) da string.
+
+
+frase.rstrip()   remove os espaço inuteis que tenha depois(direira) da string
+
+
+frase.lstrip()   remove os espaço inuteis que tenha antes(esquerda) da string 
+
+
+
+DIVISAO
+
+
+frase.split() faz uma divisão usando os espaços como referencia. separa cada palavra em uma nova lista e cada lista recebe sua nova ordem de elementos
+
+frase.split()
+         | 0  1  2  3  4  |  0  1  |  0  1  2  3  4  |  0  1  2  3  4  5  |
+ frase   |[C][u][r][s][o] | [e][m] | [V][i][d][e][o] | [P][y][t][h][o][n] |
+         |        0       |    1   |        2        |          3         |
+
+
+JUNÇÃO
+
+
+'-'.join(frase) quando se tem uma string separado em lista é possivel utilizar o join para unilas e usar o caracter entre aspas para definir oq separa as palavras.
+
+´-´.join(frase)
+
+          0  1  2  3  4   5   6  7   8   9 10 11 12 13  14  15 16 17 18 19 20
+ frase = [C][u][r][s][o] [-] [e][m] [-] [V][i][d][e][o] [-] [P][y][t][h][o][n]
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+aula 17 
+
+----------------------------------------------------------------------------------------------------------------------------
+listas são diferentes de tuplas pois seus elementos podem ser mudados ou adicionados.
+
+para definir uma lista use conchetes "[]"
+ex
+lista = [8,5,3,4,3,2,1]
+
+
+lista.sort() #para organizar em ordem crescente 
+
+lista.sort(reverse=True) #para inverter a ordem da lista
+
+lista.append('elemento')   #Para adicionar um item no final da lista.
+
+len(lista) #Para saber o total de valores existentes na lista
+
+lista.insert(n° da posição,'elemento')   #Para adicionar um elemento na posição desejada.
+
+del lista[n° da posição] #para apagar um elemento especifico da lista pelo numero do seu indice.
+
+lista.pop(n° da posição) #para apagar um elemento especifico da lista pelo numero do seu indice (caso ñ informado o ultimo será apagado).
+
+lista.remove('valor do elemento') #Para apagar um elemento especifico pelo seu valor e não pelo indice.
+
+EM TODOS ESSES CASOS OS INDICES SERÃO REFEITOS
+
+caso tente apagar um indice ou valor não existente o código dara erro.
+em caso de substituição ou remoção por valor é possivel atravez do if
+
+ex
+
+if 'valor' in lista:
+	lista.remove('valor')
+
+É possivel criar uma lista organizada atraves do range
+ex:
+
+lista = list(range(4,11)) 
+print(lista)
+---------------------------------------
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+
+

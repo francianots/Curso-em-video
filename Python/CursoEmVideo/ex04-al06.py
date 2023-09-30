@@ -1,0 +1,7 @@
+v=(input("Digite algo: "))
+print("Qual o tipo da variavel: ",type(v))
+print("Ela é uma letra: ",v.isalpha())
+print("Ela é um número: ",v.isnumeric())
+print("Ela esta toda em minuscula ",v.islower())
+print("Ela tem letras e números: ",v.isalnum())
+print("Ela é um espaço: ",v.isspace())

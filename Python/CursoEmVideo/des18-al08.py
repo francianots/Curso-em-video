@@ -1,0 +1,21 @@
+# Faça um programa que leia um ângulo qualquer e mostre na tela o valor do seno,
+# cosseno e tangente desse ângulo.
+from math import cos, sin, tan, degrees,radians
+print("------------------------------------------------------")
+print("       CALCULADORA DE SENO, COSSENO E TANGENTE")
+print("------------------------------------------------------")
+print("")
+angulo = float(input("Digite o valor do ângulo: "))
+angulo = radians(angulo)
+seno = sin(angulo)
+cose = cos(angulo)
+tang = tan(angulo)
+angulo = degrees(angulo)
+print("")
+print("------------------------------------------------------")
+print(f"Para um ângulo de: {int(angulo)}°")
+print("")
+print(f"O valor do seno é: {seno:.2}")
+print(f"O valor do cosseno é: {cose:.2}")
+print(f"O valor da tangente é: {tang:.2}")
+print("------------------------------------------------------")
