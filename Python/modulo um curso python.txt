@@ -1,4 +1,8 @@
 modulo um curso python
+
+
+:.2f   #Para formatar um elemento em format com duas casas apos a virgula
+:<30   #Para alinhar na essquerda e completar com 30 caracteres (neste caso vazio para add comoque ":caractere<20")
 --------------------------------------------------------------------------
 aula 09
 
@@ -111,6 +115,119 @@ JUNÇÃO
  frase = [C][u][r][s][o] [-] [e][m] [-] [V][i][d][e][o] [-] [P][y][t][h][o][n]
 
 
+-------------------------------------------------------------------------------------------------------
+
+aula 16
+
+-------------------------------------------------------------------------------------------------------
+Tuplas
+------------------------------------
+
+Tuplas são variaveis compostas, existem 3 tipos de variaveis compostas que são elas:
+
+Tuplas
+Listas
+Dicionarios
+
+As tuplas são imutaveis e não é possivem editar adicionar ou remover os elementos nela.
+os elementos delas são identificadas por inces que sempre se iniciam em 0.
+
+As tuplas podem receber diferentes tipos de elementos, (str, int, float)
+
+As tuplas podem ter sua utilização fatiada assim como as strings.
+
+para saber quantos elementos tem na tupla se ultiliza a função len ex:  len(lanche), neste caso ira retornar a quantidade exata de elementos existentes dentro da tupla.
+tbm é posossivel criar um looping com os elementos da tupla que ce inicia no primeito indice e termina no ultimo
+ex: 
+
+for c in lanche:     
+	print (c)
+
+neste caso ira mostrar de um em um os elemento contido na tupla lanche até o ultima.
+
+
+as tuplas são comumente criadas atraves de parenteses "()" mas podem ser criadas sem.
+ex:
+
+lanche = ('hamburguer', 'pizza', 'suco', 'pudim')
+ou
+lanche = 'hamburguer', 'pizza', 'suco', 'pudim'
+ 
+
+existe varias formas de mostras os itens da variavel tupla.
+ex:
+
+
+lanche = ('hamburguer', 'pizza', 'suco', 'pudim', 'batata frita')
+
+for comida in lanche:
+	print(f'Eu vou comer {comida}')
+
+# neste caso a variavel comida vai percorrer a variavel lanche recebendo em cada looping o elemento de cada item, printando assim um elemento por vez.
+
+
+lanche = ('hamburguer', 'pizza', 'suco', 'pudim', 'batata frita')
+
+for cont in range(0, len(lanche)):
+	print(f'Eu vou comer {lanche[cont]} na posição {cont}')
+
+# desta forma a variavel cont ira receber a cada looping o número do indice da variavel lanche atravez da função len em sequencia, e ira printar cada incide do lanche em sequencia
+
+
+lanche = ('hamburguer', 'pizza', 'suco', 'pudim', 'batata frita')
+
+for pos, comida in enumerate(lanche):
+	print(f'Eu vou comer {comida} na posição {pos}')
+
+
+
+para printar a tupla em ordem alfabetica ou numerica e possivel utilizar a função sorted.
+ex:
+
+print(sorted(lanche))
+
+-quando somadas duas tuplas elas são concatenadas na ordem da soma.
+ex:
+a = 4, 3, 4, 8
+b = 2, 9, 4, 1
+
+print(a+b) 
+
+4, 3, 4, 8, 2, 9, 4, 1
+
+ou 
+
+print(b+a)
+
+2, 9, 4, 1, 4, 3, 4, 8 
+
+
+ 
+
+Para mostrar quantas vezes um elemento aparece em uma tupla e utilizada a função .count
+
+ex: 
+print(a.cont(4))
+
+2
+
+
+
+
+Para mostrar a posição de um elemnto e uma tupla utilizar a função .index (apresentara somente a primeira posição q o elemento aparece ) para pesquisar a partir de alguma posição especifica coloca uma virgula e o numero do incice que ira começar a pesquisa.
+ex:
+
+print(b.index(4))
+
+2
+
+
+Para apagar uma tupla utiliza a função del(). A partir do momento que ela é apagada é possivel atribuir uma nova tupla a essa variavel. so possivel deletar a tupla inteira.
+ex:
+
+del(lanche)
+
+
 
 
 
@@ -134,7 +251,7 @@ lista.append('elemento')   #Para adicionar um item no final da lista.
 
 len(lista) #Para saber o total de valores existentes na lista
 
-lista.insert(n° da posição,'elemento')   #Para adicionar um elemento na posição desejada.
+lista.insert(n° da posição,'elemento')   #Para adicionar um elemento na posição desejada. Ele ira reorganizar o indices com o novo elemento incluido66 m
 
 del lista[n° da posição] #para apagar um elemento especifico da lista pelo numero do seu indice.
 
@@ -161,5 +278,42 @@ print(lista)
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
+qunado se faz uma copia de lista se cria uma ligação onde tudo oque acontece em uma se repete na outra para que isso não acontece deve se mandar fazer uma copia dos valores :
+
+ex:
+a = [0, 1, 4, 8]]
+
+b = a # neste caso "b" estara ligado a "a" repetindo qualquer mudança que ocorra e vice versa
+
+b = a[:] #neste caso "b" irá receber os valores de "a" sem ligação de um com o outro
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+                                            aula 18
+---------------------------------------------------------------------------------------------------------------------------
+ listas compostas são listas dentro de listas.
+ex:
+pessoas = [['Pedro, 25'],['Maria', 19],['João', 32]]
+
+ 
+pessoas
+
+|-------------------|---|----------------------|-------------------------------------------------------------|
+|  | 'Pedro' | 25|  |   |   'Maria'   | 19|    |   |  'João'   | 32|    |    #elementos                      |
+|  |---------|---|  |   |-------------|---|    |   |-----------|---|    |------------------------------------|
+|  |    0    | 1 |  |   |       0     | 1 |    |   |     0     | 1 |    |    #indices das listas internas    |
+|-------------------|--------------------------|------------------------|------------------------------------|
+|         0         |              1           |            2           |    #indices                        |
+|----------------------------------------------|------------------------|------------------------------------|
+
+
+print(pessoas[2][0])      #para mostrar um elemento espeecifico dentru de uma lista composta é utilizado o indice referente a lista interna e em seguida o 
+    João                   indice do elemento dessa lista sempre usando os conchetes "[]"
+
+
+print(pessoas[1])         #Para mostrar a lista completa dentro do indice 1 da lista.
+  ['joâo', 19]
 
 
