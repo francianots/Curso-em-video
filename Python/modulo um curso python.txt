@@ -303,7 +303,7 @@ pessoas
 |-------------------|---|----------------------|-------------------------------------------------------------|
 |  | 'Pedro' | 25|  |   |   'Maria'   | 19|    |   |  'João'   | 32|    |    #elementos                      |
 |  |---------|---|  |   |-------------|---|    |   |-----------|---|    |------------------------------------|
-|  |    0    | 1 |  |   |       0     | 1 |    |   |     0     | 1 |    |    #indices das listas internas    |
+|  |    0    | 1 |  |   |      0      | 1 |    |   |     0     | 1 |    |    #indices das listas internas    |
 |-------------------|--------------------------|------------------------|------------------------------------|
 |         0         |              1           |            2           |    #indices                        |
 |----------------------------------------------|------------------------|------------------------------------|
@@ -315,5 +315,120 @@ print(pessoas[2][0])      #para mostrar um elemento espeecifico dentru de uma li
 
 print(pessoas[1])         #Para mostrar a lista completa dentro do indice 1 da lista.
   ['joâo', 19]
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+Aula 19
+-------------------------------------------------------------------------------------------------------------------
+Dicionários
+-------------------------------------------------------------------------------------------------------------------
+
+Dicionários são estruturas de dados semelhantes as tuplas e as listas só que com seus indices literais, em vez de ter números tem uma string personalizadas pelo programador.
+
+identificação
+
+( ) Tuplas
+[ ] Listas  = list()
+{ } Dicionários = dict() 
+
+ex: 
+
+dados = dict()   ou dados = {}
+dados = {'nome': 'Pedro', 'idade':25} #no dicionario é preciso informar o nome do indice antes do elemento os separando por dois pontos ":".
+
+    dados
+  |-----------------|
+  | 'Pedro' |   25  |  
+  |---------|-------|  
+  |  nome   | idade |  
+  |-----------------|     
+
+print(dados['nome']    Pedro         #para se trabalhar o elemento não se usa mais o indice e sim o nome com aspas.
+print(dados['idade']     25
+
+
+
+
+
+
+dados['Sexo'] = 'M'   #Parea se adicionar um elemento ao dicionario não é usado o "append" e sim o "=".
+
+    dados
+  |------------------------|
+  | 'Pedro' |   25  |  'M' |
+  |---------|-------|------|  
+  |  nome   | idade | sexo |  
+  |------------------------|
+
+
+
+
+del.dados['idadade']    # para apagar um elemento da biblioteca
+
+dados
+  |-----------------|
+  | 'Pedro' |  'M'  |  
+  |---------|-------|  
+  |  nome   |  sexo |  
+  |-----------------|     
+
+
+
+
+
+
+
+    filme
+  |----------------------------------------|-------------|-----------|
+  | 'Star Wars' |  1977  |  'George Lucas' |  .values()  |           |
+  |-------------|--------|-----------------|-------------| .items()  |
+  |    titulo   |  ano   |      diretor    |   .keys()   |           |
+  |----------------------------------------|-------------|-----------|
+
+print(filme.values()) dict_values(['Star Wars', 1977, 'George Lucas']) |#Com o ".values()" é trabalhado os valores do dicionário.
+
+print(filme.keys()) dict_keys(['titulo', 'ano', 'diretor'])  |#Com ".keys()" é trabalhado as chaves (indices) do dicionário.
+
+print(filme.items()) dict_items([('titulo','Star Wars'), ('ano', 1977), ('diretor', 'George Lucas')]) |#Com o ".items()" é trabalhado todos os itens da lista, tanto chaves quanto valaores. (Semelhante ao ".enumerate()") 
+
+ex: 
+for k, v in filme.items():
+	print(f'O {k} é {v}.')
+
+
+resultado:
+
+O titulo é Star Wars.        #Primeiro laço.
+
+O ano é 1977.                #Segundo laço.
+
+O diretor é George Lucas     #Terceiro laço.
+
+
+
+
+Um Dicionario pode ser inserido em uma lista ou o contrario.
+ex:
+
+  pessoas
+|-----------------------|--------------------------|---------------------------------------------------------------|
+|  | 'Pedro' |   25  |  |   | 'Maria' |   19  |    |   | 'João'  |   32  |    |    .values()  |--------------------|
+|  |---------|-------|  |   |---------|-------|    |   |---------|-------|    |---------------|    .items()        | 
+|  |   nome  | idade |  |   |   nome  | idade |    |   |   nome  | idade |    |    .keys()    |--------------------|
+|-----------------------|--------------------------|--------------------------|------------------------------------|
+|            0          |             1            |             2            |    #indices                        |
+|-----------------------|--------------------------|--------------------------|------------------------------------|
+
+
+print(pessoas[1]['nome'])    'Maria'
+
+print(pessoas[2]['idade'])     '32'
+
+
+lista-ex.append(pessoas.copy())  #para fazer uma copia em dicionário é necessario usar o metodo interno ".copy()". O metodo de fatiamento "[:]" NÃO funciona em dicionário!!
+
+
 
 
